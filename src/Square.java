@@ -15,7 +15,7 @@ public class Square {
     }
 
     public double calculateArea() {
-        return side*side;
+        return this.side*this.side;
 
     }
 
