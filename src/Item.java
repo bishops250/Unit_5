@@ -5,7 +5,7 @@ public class Item {
     private double part_price;
 
     public Item() {
-        part_number="";
+        this.part_number="";
         part_description="";
         part_price=0.0;
 
@@ -16,7 +16,7 @@ public class Item {
     }
 
 
-    Item(String part_number, String part_description, double part_price) {
+    public Item(String part_number, String part_description, double part_price) {
 
         if(part_price<=0) {
             part_price=0;
@@ -27,7 +27,7 @@ public class Item {
     }
 
     public  double getTotalPrice(int quantity) {
-        return part_price*quantity;
+        return this.part_price*quantity;
     }
 
 }

@@ -55,7 +55,7 @@ public class Student {
 
     public double getAverage() //????? Should this be a double instead????
     {
-        return (test_score_1 + test_score_2) / 2;
+        return (test_score_1 + test_score_2) / 2.0;
     }
 
     //-----------------------------------------------

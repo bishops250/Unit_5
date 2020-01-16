@@ -27,10 +27,11 @@ public class CarTrip {
 
     }
     public double getGasMileage(){
-
+        return (this.myStartOdometer-this.myEndOdometer) /this.myGallonsUsed;
     }
     public double getTotalGasPrice(double pricePerGallon){
 
+        return this.myGallonsUsed * pricePerGallon;
     }
     public String toString(){
 
