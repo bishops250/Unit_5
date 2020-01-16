@@ -53,9 +53,9 @@ public class Student {
     //getAverage: compute and return the student's test average
     //-----------------------------------------------
 
-    public String getAverage() //????? Should this be a double instead????
+    public double getAverage() //????? Should this be a double instead????
     {
-        return "The average for " + this.studentName + " is " + (test_score_1 + test_score_2) / 2;
+        return (test_score_1 + test_score_2) / 2;
     }
 
     //-----------------------------------------------
