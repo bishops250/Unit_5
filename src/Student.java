@@ -24,8 +24,8 @@ public class Student {
 
     public Student() {
         this.studentName = "JohnDoe";
-        this.test_score_1 = 90.0;
-        this.test_score_2 = 50.0;
+        this.test_score_1 = 0.0;
+        this.test_score_2 = 0.0;
     }
 
     public Student(String studentName) {

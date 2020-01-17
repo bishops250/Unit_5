@@ -19,15 +19,37 @@ public class CarTrip {
         this.myGallonsUsed= myGallonsUsed;
 
     }
+    public double getMyStartOdometer() {
+        return this.myStartOdometer;
+    }
+    public double getMyEndOdometer() {
+        return this.myEndOdometer;
+    }
+    public double getMyGallonsUsed() {
+        return this.myGallonsUsed;
+    }
+    public double getMyTime() {
+        return this.myTime;
+    }
+
+
 
     public double getTripDistance() {
-
+        return  this.myEndOdometer-this.myStartOdometer;
     }
-    public double getAverageSpeed(){
-
+    public double getAverageSpeed() {
+        if (this.myTime == 0) {
+            return 0.0;
+        } else {
+            return (this.myEndOdometer - this.myStartOdometer) / this.myTime;
+        }
     }
-    public double getGasMileage(){
-        return (this.myStartOdometer-this.myEndOdometer) /this.myGallonsUsed;
+    public double getGasMileage() {
+        if (this.myGallonsUsed == 0) {
+            return 0.0;
+        } else {
+            return (this.myEndOdometer-this.myStartOdometer ) / this.myGallonsUsed;
+        }
     }
     public double getTotalGasPrice(double pricePerGallon){
 
@@ -35,6 +57,7 @@ public class CarTrip {
     }
     public String toString(){
 
+        return "Distance traveled: " + getTripDistance() + " miles";
     }
 
 
