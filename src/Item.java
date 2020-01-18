@@ -12,7 +12,7 @@ public class Item {
     }
 
     public String toString() {
-        return "Item: " + this.part_number + "\nPrice: " + this.part_price + "\nDescription: " + this.part_description;
+        return "Item: " + this.part_number + "\nPrice: $" + this.part_price + "\nDescription: " + this.part_description;
     }
 
 
@@ -27,7 +27,10 @@ public class Item {
     }
 
     public  double getTotalPrice(int quantity) {
-        return this.part_price*quantity;
-    }
+        if(quantity<=0) {
+            quantity = 0;
+        }
+            return this.part_price * quantity;
+        }
 
 }
