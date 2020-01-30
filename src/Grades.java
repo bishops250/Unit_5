@@ -26,6 +26,7 @@ public class Grades
         System.out.println(student2);
         System.out.println("The average for " + student2.getName() + " is " + student2.getAverage());
 
+
         //input grades for Mike
         //print Mike
         //use getAverage to calculate & print average for Mike
