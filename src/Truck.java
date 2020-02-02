@@ -25,7 +25,7 @@ public class Truck {
         totalFuel+=fuel;
     }
 
-    public void setMps(double mpg) {
+    public void setMpg(double mpg) {
         this.mpg = mpg;
     }
 

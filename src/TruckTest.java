@@ -20,6 +20,6 @@ public class TruckTest {
         System.out.println(truck2);
 
         System.out.println(Truck.getTotalFuel());
-        
+
     }
 }
