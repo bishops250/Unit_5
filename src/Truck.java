@@ -1,20 +1,19 @@
 public class Truck {
     public String truckID;
-    private static int object_amount;
     private double odometer;
     private double mpg;
     private double fuel;
-    private final double CAPACITY= 20;
+    private final double CAPACITY = 20;
     private static double totalFuel;
-    private double miles;
+
 
     public Truck(String truckID) {
 
         this.truckID= truckID;
-        this.odometer= 0;
-        this.mpg= 0;
-        this.fuel= 0;
-        totalFuel+=fuel;
+        this.odometer= 0.0;
+        this.mpg= 0.0;
+        this.fuel= 0.0;
+        totalFuel+=this.fuel;
     }
 
     public Truck(String truckID,double odometer, double mpg, double fuel) {
@@ -22,7 +21,7 @@ public class Truck {
         this.odometer= odometer;
         this.mpg= mpg;
         this.fuel= fuel;
-        totalFuel+=fuel;
+
     }
 
     public void setMpg(double mpg) {
@@ -41,7 +40,7 @@ public class Truck {
             return "Success";
         }
         else {
-            return "Truck: "+truckID+ " does not have enough fuel to drive "+miles+ " miles.";
+            return "Truck "+truckID+ " does not have enough fuel to drive "+miles+ " miles.";
         }
     }
 
@@ -70,13 +69,10 @@ public class Truck {
        return (this.mpg * this.fuel)>=miles;
     }
 
-    public double getMiles() {
-        return this.miles;
-    }
 
     public void fill() {
         totalFuel += (this.CAPACITY - this.fuel);
-        this.fuel = CAPACITY;
+        this.fuel = this.CAPACITY;
     }
 
     public String fill(double gallons) {
@@ -86,14 +82,14 @@ public class Truck {
             return "Success";
         }
         else {
-            return "Truck "+ truckID+ ": Gallons exceeds tank capacity.";
+            return "Truck "+ truckID+ ": Gallons exceeds tank capacity";
         }
 
     }
 
     public String toString() {
 
-        return "Truck: "+truckID+"\n"+"Odometer: "+odometer+"\n"+"Miles Per Gallon:" +mpg+"\n"+"Fuel:"+fuel;
+        return "Truck: "+truckID+"\n"+"Odometer: "+odometer+"\n"+"Miles Per Gallon: " +mpg+"\n"+"Fuel: "+fuel;
     }
 }
 

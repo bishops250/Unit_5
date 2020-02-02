@@ -4,7 +4,7 @@ public class TruckTest {
         Truck truck1= new Truck("123ABC");
         Truck truck2= new Truck("456DEF",45500,18,10);
 
-        truck1.setMps(15);
+        truck1.setMpg(15);
         truck1.fill();
         truck1.drive(150);
         System.out.println(truck1);
