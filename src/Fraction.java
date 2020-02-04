@@ -22,6 +22,10 @@ public class Fraction {
 
     }
 
+    public static int reduceFraction(int numerator, int denominator) {
+        if(numerator/)
+    }
+
     public Fraction() {
         this(0,0);
 
