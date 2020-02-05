@@ -9,7 +9,7 @@ public class Fraction {
 
 
     public Fraction() {
-        this(0,0);
+        this(1,1);
 
     }
     public Fraction(int numerator, int denominator) {
@@ -35,41 +35,55 @@ public class Fraction {
 
     private void simplification() {
 
-        if(numerator<0 && denominator>=0) {
-            numerator*=1;
-            denominator*=-1;
-        }
-        else if(numerator <0 && denominator<0) {
-            numerator*=-1;
-            denominator*=-1;
-        }
-
-        else if(denominator==0) {
+        if (numerator < 0 && denominator >= 0) {
+            numerator *= 1;
+            denominator *= -1;
+        } else if (numerator < 0 && denominator < 0) {
+            numerator *= -1;
+            denominator *= -1;
+        } else if (denominator == 0) {
             System.out.println("Zero is the denominator meaning the fraction is UNDEFINED!");
 
-        }
-
-        else if(numerator==0) {
+        } else if (numerator == 0) {
             System.out.println("The numerator is zero meaning the simplest form is zero");
         }
+    }
 
-        public double add(int numerator,int denominator) {
+        public String add(int numerator,int denominator) {
 
-        }
+        this.numerator += numerator;
+        this.denominator += denominator;
 
-        public double subtract(int numerator,int denominator) {
-
-        }
-
-        public double multiply(int numerator, int denominator) {
+        return this.numerator +"/" + this.denominator;
 
         }
 
-        public double divide() {
+        public String subtract(int numerator,int denominator) {
+
+
 
         }
 
+        public String multiply(int numerator, int denominator) {
 
+        this.numerator *=numerator;
+        this.denominator *=denominator;
+
+            return this.numerator +"/" + this.denominator;
+        }
+
+        public String divide(int numerator, int denominator) {
+
+        this.numerator /=numerator;
+        this.denominator /= denominator;
+
+        return this.numerator +"/" + this.denominator;
+        }
+
+        public String toString() {
+
+
+return "";
 
     }
 
