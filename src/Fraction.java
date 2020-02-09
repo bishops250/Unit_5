@@ -48,8 +48,10 @@ public class Fraction {
 
         simplification(this);
 
+       int gcd=gcd(this);
 
-       reduceFraction(this);
+       this.numerator/=gcd;
+       this.denominator/=gcd;
 
 
     }
@@ -73,35 +75,39 @@ public class Fraction {
      * @return returns the simplified fraction(numerator & denominator) as an integer number
      */
 
-    public int reduceFraction(Fraction f1) { // I replaced the int numerator & int denominator with Fraction f1
+    public int gcd(Fraction f1) {
 
-        while (numerator % denominator != 0) {
-            int oldm = numerator;
-            int oldn = denominator;
+      int m= f1.denominator;
+      int n= f1.numerator;
+        while (m % n != 0) {
+            int oldm = m;
+            int oldn = n;
 
-            numerator = oldn;
-            denominator = oldm % oldn;
+            m = oldn;
+            n = oldm % oldn;
         }
-        return denominator;
+        return n;
     }
 
     /**
      *                                                  \\//Simplification\\//
      *
      *
+     *
      * @param f1 Passes a fraction of the users choice to simplification method.
      */
     private static void simplification(Fraction f1) {
 
-        if (f1.denominator < 0) {
+        if (f1.denominator < 0 && f1.numerator>0) {
             f1.numerator *= -1;
-            f1.denominator *= Math.abs(f1.denominator);
+            f1.denominator = Math.abs(f1.denominator);
         }
 
         else if (f1.numerator < 0 && f1.denominator < 0) {
             f1.numerator = Math.abs(f1.numerator);
             f1.denominator = Math.abs(f1.denominator);
         }
+
 
     }
 
@@ -114,15 +120,17 @@ public class Fraction {
      */
         public static Fraction add(Fraction f1, Fraction f2) {
 
-        int numerator1 = f1.numerator * f2.denominator;
+            int newFractionDenominator = f1.denominator * f2.denominator;
 
-        int numerator2 = f2.numerator * f1.denominator;
+            int numerator1 = f1.numerator * f2.denominator;
 
-        int newFractionNumerator = numerator1 + numerator2;
+            int numerator2 = f2.numerator * f1.denominator;
 
-        int newFractionDenominator = f1.denominator * f2.denominator;
+            int newFractionNumerator = numerator1 + numerator2;
 
-        return new Fraction(newFractionNumerator, newFractionDenominator);
+            Fraction newFrac= new Fraction(newFractionNumerator, newFractionDenominator);
+            simplification(newFrac);
+            return newFrac;
 
         }
 
@@ -134,6 +142,10 @@ public class Fraction {
      * @return Returns a new Fraction object with fraction subtraction operation completed
      */
         public static Fraction subtract(Fraction f1, Fraction f2) {
+
+
+
+
             int numerator1 = f1.numerator * f2.denominator;
 
             int numerator2 = f2.numerator * f1.denominator;
@@ -142,7 +154,11 @@ public class Fraction {
 
             int newFractionDenominator = f1.denominator * f2.denominator;
 
-            return new Fraction(newFractionNumerator, newFractionDenominator);
+            Fraction newFrac= new Fraction(newFractionNumerator, newFractionDenominator);
+
+            simplification(newFrac);
+
+            return newFrac;
         }
 
     /**
@@ -154,12 +170,16 @@ public class Fraction {
      */
     public static Fraction multiply(Fraction f1, Fraction f2) {
 
-            int newFractionNumerator = f1.numerator *f2.denominator ;
+            int newFractionNumerator = f1.numerator *f2.numerator ;
 
-            int newFractionDenominator = f2.numerator * f1.denominator;
+            int newFractionDenominator = f1.denominator * f2.denominator;
 
 
-            return new Fraction(newFractionNumerator, newFractionDenominator);
+        Fraction newFrac= new Fraction(newFractionNumerator, newFractionDenominator);
+
+        simplification(newFrac);
+
+        return newFrac;
         }
 
     /**
@@ -179,6 +199,8 @@ public class Fraction {
      * @return Returns a new Fraction object with fraction division operation completed
      */
         public static Fraction divide(Fraction f1, Fraction f2) {
+
+
             int f2ReciprocalNumerator= f2.denominator;
             int f2ReciprocalDenominator= f2.numerator;
 
@@ -186,7 +208,11 @@ public class Fraction {
 
             int newFractionDenominator = f1.denominator * f2ReciprocalDenominator;
 
-            return new Fraction(newFractionNumerator, newFractionDenominator);
+            Fraction newFrac= new Fraction(newFractionNumerator, newFractionDenominator);
+
+            simplification(newFrac);
+
+            return newFrac;
         }
 
     /**
