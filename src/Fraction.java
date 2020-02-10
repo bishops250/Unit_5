@@ -46,9 +46,9 @@ public class Fraction {
        this.numerator=numerator;
        this.denominator=denominator;
 
-        simplification(this);
+        simplification();
 
-       int gcd=gcd(this);
+       int gcd=Math.abs(gcd(this.numerator,this.denominator));
 
        this.numerator/=gcd;
        this.denominator/=gcd;
@@ -67,16 +67,16 @@ public class Fraction {
      *
      * @param f1 Passes a fraction of the users choice to simplification method.
      */
-    private static void simplification(Fraction f1) {
+    private void simplification() {
 
-        if (f1.denominator < 0 && f1.numerator>0) {
-            f1.numerator *= -1;
-            f1.denominator = Math.abs(f1.denominator);
+        if (this.denominator < 0 && this.numerator>0) {
+            this.numerator *= -1;
+            this.denominator = Math.abs(this.denominator);
         }
 
-        else if (f1.numerator < 0 && f1.denominator < 0) {
-            f1.numerator = Math.abs(f1.numerator);
-            f1.denominator = Math.abs(f1.denominator);
+        else if (this.numerator < 0 && this.denominator < 0) {
+            this.numerator = Math.abs(this.numerator);
+            this.denominator = Math.abs(this.denominator);
         }
 
 
@@ -111,7 +111,7 @@ public class Fraction {
             int newFractionNumerator = numerator1 + numerator2;
 
             Fraction newFrac= new Fraction(newFractionNumerator, newFractionDenominator);
-            simplification(newFrac);
+
             return newFrac;
 
         }
@@ -147,7 +147,6 @@ public class Fraction {
 
             Fraction newFrac= new Fraction(newFractionNumerator, newFractionDenominator);
 
-            simplification(newFrac);
 
             return newFrac;
         }
@@ -176,8 +175,6 @@ public class Fraction {
 
 
         Fraction newFrac= new Fraction(newFractionNumerator, newFractionDenominator);
-
-        simplification(newFrac);
 
         return newFrac;
         }
@@ -212,7 +209,6 @@ public class Fraction {
 
             Fraction newFrac= new Fraction(newFractionNumerator, newFractionDenominator);
 
-            simplification(newFrac);
 
             return newFrac;
         }
@@ -236,10 +232,8 @@ public class Fraction {
      * @return returns the simplified fraction(numerator and denominator) as an integer number
      */
 
-    public int gcd(Fraction f1) {
 
-      int m= f1.denominator;
-      int n= f1.numerator;
+    private int gcd(int m, int n) {
         while (m % n != 0) {
             int oldm = m;
             int oldn = n;
