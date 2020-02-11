@@ -65,7 +65,6 @@ public class Fraction {
      * numerator.
      *
      *
-     * @param f1 Passes a fraction of the users choice to simplification method.
      */
     private void simplification() {
 
