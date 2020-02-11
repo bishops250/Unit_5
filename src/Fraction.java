@@ -64,7 +64,6 @@ public class Fraction {
      * Euclid's cannot have a negative in denominator to work correct. Hence, this method places the negative in the
      * numerator.
      *
-     *
      */
     private void simplification() {
 
@@ -109,9 +108,7 @@ public class Fraction {
 
             int newFractionNumerator = numerator1 + numerator2;
 
-            Fraction newFrac= new Fraction(newFractionNumerator, newFractionDenominator);
-
-            return newFrac;
+            return new Fraction(newFractionNumerator, newFractionDenominator);
 
         }
 
@@ -144,10 +141,8 @@ public class Fraction {
 
             int newFractionDenominator = f1.denominator * f2.denominator;
 
-            Fraction newFrac= new Fraction(newFractionNumerator, newFractionDenominator);
 
-
-            return newFrac;
+            return new Fraction(newFractionNumerator, newFractionDenominator);
         }
 
     /**
@@ -173,9 +168,7 @@ public class Fraction {
             int newFractionDenominator = f1.denominator * f2.denominator;
 
 
-        Fraction newFrac= new Fraction(newFractionNumerator, newFractionDenominator);
-
-        return newFrac;
+        return new Fraction(newFractionNumerator, newFractionDenominator);
         }
 
     /**
@@ -206,10 +199,8 @@ public class Fraction {
 
             int newFractionDenominator = f1.denominator * f2ReciprocalDenominator;
 
-            Fraction newFrac= new Fraction(newFractionNumerator, newFractionDenominator);
 
-
-            return newFrac;
+            return new Fraction(newFractionNumerator, newFractionDenominator);
         }
 
     /**
@@ -226,8 +217,8 @@ public class Fraction {
      *
      * 3) Done
      *
-     * @param f1 passes fraction object to the reduceFraction method it contains the simplified fractions, which is a
-     * numerator and denominator
+     * @param m passes the fraction numerator
+     * @param n passes the fraction denominator
      * @return returns the simplified fraction(numerator and denominator) as an integer number
      */
 
