@@ -2,8 +2,6 @@ import java.util.Scanner;
 import java.io.File;
 import java.util.HashMap;
 import java.util.ArrayList;
-import java.util.Random;
-import java.io.*;
 
 /**
  * Class that contains helper methods for the Review Lab
@@ -161,5 +159,10 @@ public class Review {
     } else {
       return randomNegativeAdj();
     }
+
+
+  }
+  public static double totalSentiment(String fileName){
+
   }
 }
