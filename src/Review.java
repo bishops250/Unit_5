@@ -164,5 +164,36 @@ public class Review {
   }
   public static double totalSentiment(String fileName){
 
+    double totalSentimentalValue= 0.0;
+
+
+
+    String reviewString = textToString(fileName);
+
+
+    for(int start=0;start<reviewString.length();start++)
+      
+    reviewString.indexOf("");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }
+
+  public static int starRating(String fileName) {
+
+    totalSentiment(fileName);
+
+
   }
 }
