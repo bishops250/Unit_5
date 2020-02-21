@@ -172,42 +172,27 @@ public class Review {
 
     String newString = "";
 
-    int start =0;
+    int start = 0;
 
-    int temp= reviewString.indexOf("");
+    int temp = reviewString.indexOf("");
 
     while (newString.length() < reviewString.length()) {
 
 
-      newString += removePunctuation(reviewString.substring(start,reviewString.indexOf("")));
-      start=temp;
+      newString += removePunctuation(reviewString.substring(start, reviewString.indexOf("")));
+      start = temp;
 
 
     }
-    for(int i=0; i<newString.length();i++) {
-      int start2=0;
-      int temp2= newString.indexOf("");
-      totalSentimentalValue += totalSentiment(newString.substring(start2,temp2));
-      start2= newString.indexOf("");
+    for (int i = 0; i < newString.length(); i++) {
+      int start2 = 0;
+      int temp2 = newString.indexOf("");
+      totalSentimentalValue += totalSentiment(newString.substring(start2, temp2));
+      start2 = newString.indexOf("");
+    }
+    return totalSentimentalValue;
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  }
 
   public static int starRating(String fileName) {
 
