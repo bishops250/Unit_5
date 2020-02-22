@@ -178,14 +178,14 @@ public class Review {
       end=originalString.indexOf(" ",start);
 
     }
-    while (newString.lastIndexOf(" ")!=originalString.lastIndexOf(" "))
+   /* while (newString.lastIndexOf(" ")!=originalString.lastIndexOf(" "))
 
     while (newString.length()<originalString.length()+1) {
       int start2=0;
       int end2=newString.indexOf(" ",start2);
       totalSentimentVal += sentimentVal(newString.substring(start2,end2));
     }
-
+*/
     return totalSentimentVal;
   }
 
