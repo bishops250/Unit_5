@@ -164,33 +164,29 @@ public class Review {
   }
   public static double totalSentiment(String fileName) {
 
-    double totalSentimentalValue = 0.0;
-    int startCount = 0;
+    double totalSentimentVal=0.0;
+    String originalString=removePunctuation(textToString(fileName))+ " ";
+    String newString="";
+    int start=0;
+    int end= originalString.indexOf(" ",start);
 
 
-    String reviewString = textToString(fileName);
+    while(newString.length()<originalString.length()) {
 
-    String newString = "";
-
-    int start = 0;
-
-    int temp = reviewString.indexOf("");
-
-    while (newString.length() < reviewString.length()) {
-
-
-      newString += removePunctuation(reviewString.substring(start, reviewString.indexOf("")));
-      start = temp;
-
+      newString += removePunctuation(originalString.substring(start,end));
+      start=end;
+      end=originalString.indexOf(" ",start);
 
     }
-    for (int i = 0; i < newString.length(); i++) {
-      int start2 = 0;
-      int temp2 = newString.indexOf("");
-      totalSentimentalValue += totalSentiment(newString.substring(start2, temp2));
-      start2 = newString.indexOf("");
+    while (newString.lastIndexOf(" ")!=originalString.lastIndexOf(" "))
+
+    while (newString.length()<originalString.length()+1) {
+      int start2=0;
+      int end2=newString.indexOf(" ",start2);
+      totalSentimentVal += sentimentVal(newString.substring(start2,end2));
     }
-    return totalSentimentalValue;
+
+    return totalSentimentVal;
   }
 
 
@@ -198,6 +194,6 @@ public class Review {
 
     totalSentiment(fileName);
 
-
+return 0;
   }
 }
