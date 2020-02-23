@@ -172,9 +172,10 @@ public class Review {
     int temp=0;
 
 
-    while(newString.length()+1<originalString.length()-1 && temp!=originalString.length()) { /*temp is uncessary
+    while(newString.length()+1<originalString.length()-1 && temp!=originalString.length()) { /*temp is unnecessary
  is keep newString.length()+1 delete the plus one and you must have temp to stop the loop and not cause an error
- couldn't this be simplifie*/
+ couldn't this be simplified to one line where you test for -1 if you get a negative one from the indexOf you
+ stop */
 
 
         newString += removePunctuation(originalString.substring(start,
@@ -187,10 +188,10 @@ public class Review {
 
     }
 
-    while(start2!=-1) { /*temp is uncessary
+    while(  start2<newString.length()-1 &&start2!=-1) { /*temp is uncessary
  is keep newString.length()+1 delete the plus one and you must have temp to stop the loop and not cause an error*/
       totalSentimentVal += sentimentVal(newString.substring(start2,
-              newString.indexOf(" ", start2 + 1)));
+              newString.indexOf(" ", start2 +1)));
 
       start2 = originalString.indexOf(" ", start2 + 1);
 
@@ -211,8 +212,22 @@ public class Review {
 
 
   public static int starRating(String fileName) {
+    double totalSentimentValue=totalSentiment(fileName);
 
-    totalSentiment(fileName);
+    if(totalSentimentValue<=0 || totalSentimentValue>=0 && totalSentimentValue<25)
+      return 1;
+
+    else if(totalSentimentValue>=25 && totalSentimentValue<50)
+      return 2;
+
+    else if(totalSentimentValue>=50&& totalSentimentValue<75)
+      return 3;
+
+    else if(totalSentimentValue>=75 && totalSentimentValue<100)
+      return 4;
+
+    else if(totalSentimentValue>=100)
+      return 5;
 
 return 0;
   }
