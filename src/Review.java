@@ -166,14 +166,12 @@ public class Review {
 
     double totalSentimentVal=0.0;
     String originalString=removePunctuation(textToString(fileName))+ " ";
-    String newString="";
     int start=0;
     int end;
-    
+
     while(originalString.indexOf(" ",start+1) !=-1) {
         end= originalString.indexOf(" ",start+1);
 
-        newString += removePunctuation(originalString.substring(start,end)) + " ";
         totalSentimentVal+=sentimentVal(removePunctuation(originalString.substring(start,end)));
 
       start=end;
