@@ -168,45 +168,17 @@ public class Review {
     String originalString=removePunctuation(textToString(fileName))+ " ";
     String newString="";
     int start=0;
-    int start2=0;
-    int temp=0;
+    int end;
+    
+    while(originalString.indexOf(" ",start+1) !=-1) {
+        end= originalString.indexOf(" ",start+1);
 
+        newString += removePunctuation(originalString.substring(start,end)) + " ";
+        totalSentimentVal+=sentimentVal(removePunctuation(originalString.substring(start,end)));
 
-    while(newString.length()+1<originalString.length()-1 && temp!=originalString.length()) { /*temp is unnecessary
- is keep newString.length()+1 delete the plus one and you must have temp to stop the loop and not cause an error
- couldn't this be simplified to one line where you test for -1 if you get a negative one from the indexOf you
- stop */
-
-
-        newString += removePunctuation(originalString.substring(start,
-                originalString.indexOf(" ", start + 1)))
-                + " ";
-
-        start = originalString.indexOf(" ", start + 1);
-
-        temp = start + 1;
+      start=end;
 
     }
-
-    while(  start2<newString.length()-1 &&start2!=-1) { /*temp is uncessary
- is keep newString.length()+1 delete the plus one and you must have temp to stop the loop and not cause an error*/
-      totalSentimentVal += sentimentVal(newString.substring(start2,
-              newString.indexOf(" ", start2 +1)));
-
-      start2 = originalString.indexOf(" ", start2 + 1);
-
-
-    }
-
-
-   /* while (newString.lastIndexOf(" ")!=originalString.lastIndexOf(" "))
-
-    while (newString.length()<originalString.length()+1) {
-      int start2=0;
-      int end2=newString.indexOf(" ",start2);
-      totalSentimentVal += sentimentVal(newString.substring(start2,end2));
-    }
-*/
     return totalSentimentVal;
   }
 

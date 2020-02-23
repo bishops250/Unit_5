@@ -7,15 +7,9 @@ public class ReviewDriver {
         System.out.println(Review.sentimentVal("finger"));
         System.out.println(Review.sentimentVal("0"));*/
 
-        //System.out.println(Review.totalSentiment("reviewFile.txt"));
+        System.out.println(Review.totalSentiment("reviewFile.txt"));
         System.out.println(Review.totalSentiment("26WestReview.txt"));
 
-        /*String testingIndex= "Hello Friends ";
-
-        System.out.println(testingIndex.indexOf(" "));
-        System.out.println(testingIndex.indexOf(" ",6));
-
-*/
 
 
     }
