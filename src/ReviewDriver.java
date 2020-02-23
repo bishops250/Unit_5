@@ -9,7 +9,12 @@ public class ReviewDriver {
 
         Review.totalSentiment("reviewFile.txt");
 
+        /*String testingIndex= "Hello Friends ";
 
+        System.out.println(testingIndex.indexOf(" "));
+        System.out.println(testingIndex.indexOf(" ",6));
+
+*/
 
 
     }

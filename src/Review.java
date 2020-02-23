@@ -168,16 +168,19 @@ public class Review {
     String originalString=removePunctuation(textToString(fileName))+ " ";
     String newString="";
     int start=0;
-    int end= originalString.indexOf(" ",start);
 
 
-    while(newString.length()<originalString.length()) {
+    while(newString.length()<originalString.length()-1) {
 
-      newString += removePunctuation(originalString.substring(start,end));
-      start=end;
-      end=originalString.indexOf(" ",start);
 
-    }
+        newString += removePunctuation(originalString.substring(start, originalString.indexOf(" ", start+1 )))
+                + " ";
+        start = originalString.indexOf(" ", start+1 );
+
+      }
+
+
+
    /* while (newString.lastIndexOf(" ")!=originalString.lastIndexOf(" "))
 
     while (newString.length()<originalString.length()+1) {
