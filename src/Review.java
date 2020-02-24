@@ -167,7 +167,7 @@ public class Review {
 
 
   public static int starRating(String fileName) {
-    double totalSentimentValue = totalSentiment(fileName);
+    double totalSentimentValue = totalSentiment.;//Fix THIS!!!!!!!!!!!!!
 
     if (totalSentimentValue <= 0 || totalSentimentValue >= 0 && totalSentimentValue < 25)
       return 1;
