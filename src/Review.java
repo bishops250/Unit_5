@@ -198,7 +198,7 @@ public class Review {
 
 while(fakeReviewString.indexOf("*",start)!=-1) {
   int end=fakeReviewString.indexOf("*",start+1);
-  fakeReviewString.replace(fakeReviewString.substring(start,end),positiveAdjective);
+  fakeReviewString.replace(fakeReviewString.substring(start,end+1),positiveAdjective);
   start=end;
 
 
