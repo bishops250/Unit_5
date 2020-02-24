@@ -150,7 +150,7 @@ public class Review {
   public static double totalSentiment(String fileName) {
 
     double totalSentimentVal = 0.0;
-    String originalString = removePunctuation(textToString(fileName)) + " ";
+    String originalString = textToString(fileName) + " ";
     int start = 0;
     int end;
 
