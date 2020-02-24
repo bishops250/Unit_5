@@ -189,20 +189,22 @@ public class Review {
 
   public static String fakeReview(String fileName) {
 
-    String fakeReviewString=textToString(fileName) + " ";
+    String fakeReviewString = textToString(fileName) + " ";
 
-    String positiveAdjective="";
-    String negativeAdjective="";
+    String positiveAdjective = "";
+    String negativeAdjective = "";
 
-    int start=0;
+    int start = 0;
 
-while(fakeReviewString.indexOf("*",start)!=-1) {
-  int end=fakeReviewString.indexOf("*",start+1);
-  fakeReviewString.replace(fakeReviewString.substring(start,end+1),positiveAdjective);
-  start=end;
+    while (fakeReviewString.indexOf("*", start) != -1) {
+      int end = fakeReviewString.indexOf("*", start + 1);
+      fakeReviewString.replace(fakeReviewString.substring(start, end + 1), positiveAdjective);
+      start = end;
 
 
     }
+
+    return "Not in Use";
 
   }
 }
