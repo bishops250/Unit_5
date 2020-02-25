@@ -167,7 +167,9 @@ public class Review {
 
 
   public static int starRating(String fileName) {
-    double totalSentimentValue = totalSentiment.;//Fix THIS!!!!!!!!!!!!!
+    double totalSentimentValue;//Fix THIS!!!!!!!!!!!!!
+
+    totalSentimentValue= totalSentiment(fileName);
 
     if (totalSentimentValue <= 0 || totalSentimentValue >= 0 && totalSentimentValue < 25)
       return 1;
@@ -184,7 +186,11 @@ public class Review {
     else if (totalSentimentValue >= 100)
       return 5;
 
-    return 0;
+    else {
+
+      return 0;
+    }
+
   }
 
   public static String fakeReview(String fileName) {
